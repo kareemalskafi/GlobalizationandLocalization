@@ -19,7 +19,7 @@ namespace GlobalizationandLocalization.Controllers.Api
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_Localizer["welcome"].Value);
+            return Ok(_Localizer["Welcome"].Value);
         }
     }
 }
