@@ -34,13 +34,13 @@ namespace GlobalizationandLocalization
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
             services.Configure<RequestLocalizationOptions>(options => {
                 var supportedCultures = new[] {              
-                new CultureInfo("en"),
+                new CultureInfo("en-US"),
                 new CultureInfo("ar"),
                 new CultureInfo("de"),
                 new CultureInfo("fr"),
                 new CultureInfo("es")
                 };
-                options.DefaultRequestCulture = new RequestCulture(culture: "en", uiCulture: "en"); //Default Language
+                options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US"); //Default Language
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
