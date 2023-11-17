@@ -1,11 +1,39 @@
-﻿<!DOCTYPE html>
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GlobalizationandLocalization</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+   
+    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        <!-- RTL Latest compiled and minified CSS From=> www.rtlcss.com/cdn/css-frameworks/bootstrap/index.html-->
+        <link rel="stylesheet"
+        href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
+        integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe"
+        crossorigin="anonymous" />
+@*
+        var Direction = "rtl";
+        dir = "@Direction"*@
+          <style>
+                  table {
+                  direction: rtl;
+                  }
+              </style>
+
+
+
+    }
     <link rel="stylesheet" href="~/css/site.css" />
+
+
 </head>
 <body>
     <header>
@@ -19,16 +47,21 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@localizer["Home"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">@localizer["Privacy"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Test" asp-action="Index">Test</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Test" asp-action="Index">@localizer["Test"]</a>
                         </li>
                     </ul>
                 </div>
+
+                <div>
+                    <partial name="_SelectLanguagePartiaol"/>
+                </div>
+
             </div>
         </nav>
     </header>
