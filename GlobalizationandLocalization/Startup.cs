@@ -29,7 +29,7 @@ namespace GlobalizationandLocalization
         public void ConfigureServices(IServiceCollection services)
         {
 
-            // Localization
+            // Localization Services
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
             services.Configure<RequestLocalizationOptions>(options => {
@@ -67,7 +67,7 @@ namespace GlobalizationandLocalization
 
             app.UseRouting();
 
-            // Localization
+            // Localization Configure
             var LocOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(LocOptions.Value);
 
