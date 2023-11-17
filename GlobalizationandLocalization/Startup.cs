@@ -33,8 +33,7 @@ namespace GlobalizationandLocalization
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
             services.Configure<RequestLocalizationOptions>(options => {
-                var supportedCultures = new[] {
-                
+                var supportedCultures = new[] {              
                 new CultureInfo("en-US"),
                 new CultureInfo("ar"),
                 new CultureInfo("de"),
