@@ -29,19 +29,12 @@ namespace GlobalizationandLocalization
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddLocalization(options => options.ResourcesPath = "SharedResource");
-
-            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization();
-
-
-
-            /* Localization Services
+            // Localization Services
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization();
-            */
+            
 
 
             services.Configure<RequestLocalizationOptions>(options => {
