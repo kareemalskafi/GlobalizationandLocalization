@@ -4,7 +4,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,10 +19,20 @@
         href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css"
         integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe"
         crossorigin="anonymous" />
-@*
-        var Direction = "rtl";
-        dir = "@Direction"
+    }
+    @{
+        string dir = CultureInfo.CurrentCulture.Name.StartsWith("ar") ? "rtl" : "ltr";
+    }
+    <style>
+        html {
+            direction: @dir;
+        }
+    </style>
 
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+    @*
 
     أول حاجة هتضيف كلاس فاضي يكون اسمه
     SharedResource
@@ -31,18 +41,14 @@
     SharedResource.ar.resx
     وبعد كده تعمل inject عن طريق IStringLocalizer عادي وتستخدمهم مثلا
     inject IStringLocalizer<SharedResource> sharedLocalizer
-        *@
-          <style>
-                  table {
-                  direction: rtl;
-                  }
-              </style>
 
-
-
+    <style>
+    table {
+    direction: rtl;
     }
-    <link rel="stylesheet" href="~/css/site.css" />
+    </style>
 
+    *@
 
 </head>
 <body>
