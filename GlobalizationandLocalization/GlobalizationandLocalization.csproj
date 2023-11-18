@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="SharedResource\SharedResource.ar.resx" />
+    <Content Include="SharedResource\Controllers.Api.LanguageController.en.resx" />
+  </ItemGroup>
+
 </Project>

@@ -4,6 +4,8 @@
 
 @inject IViewLocalizer localizer
 
+
+
 <form method="POST" asp-action="Create">
 
     <div class="form-group">
@@ -20,6 +22,7 @@
 
 </form>
 
+@*For validation*@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
